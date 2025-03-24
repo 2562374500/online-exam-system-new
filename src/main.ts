@@ -10,14 +10,29 @@ declare global {
   }
 }
 
-const { createApp } = window.Vue
-const { createPinia } = window.Pinia
+// 等待 DOM 加载完成
+document.addEventListener('DOMContentLoaded', () => {
+  const { createApp } = window.Vue
+  const { createPinia } = window.Pinia
 
-const app = createApp(App)
-const pinia = createPinia()
+  const app = createApp(App)
+  const pinia = createPinia()
 
-app.use(pinia)
-app.use(router)
-app.use(window.ElementPlus)
-
-app.mount('#app') 
+  // 使用 requestIdleCallback 在空闲时初始化应用
+  if ('requestIdleCallback' in window) {
+    window.requestIdleCallback(() => {
+      app.use(pinia)
+      app.use(router)
+      app.use(window.ElementPlus)
+      app.mount('#app')
+    }, { timeout: 2000 })
+  } else {
+    // 降级处理
+    setTimeout(() => {
+      app.use(pinia)
+      app.use(router)
+      app.use(window.ElementPlus)
+      app.mount('#app')
+    }, 0)
+  }
+}) 
