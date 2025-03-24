@@ -1,7 +1,9 @@
-import { createRouter, createWebHashHistory } from 'vue-router'
+declare const VueRouter: any
+
+const { createRouter, createWebHistory } = VueRouter
 
 const router = createRouter({
-  history: createWebHashHistory(),
+  history: createWebHistory('/'),
   routes: [
     {
       path: '/',
@@ -9,18 +11,18 @@ const router = createRouter({
       component: () => import('../views/HomeView.vue')
     },
     {
-      path: '/exam',
-      name: 'exam',
+      path: '/exam-list',
+      name: 'exam-list',
       component: () => import('../views/exam/ExamList.vue')
     },
     {
-      path: '/paper',
-      name: 'paper',
+      path: '/paper-list',
+      name: 'paper-list',
       component: () => import('../views/paper/PaperList.vue')
     },
     {
-      path: '/question',
-      name: 'question',
+      path: '/question-list',
+      name: 'question-list',
       component: () => import('../views/question/QuestionList.vue')
     }
   ]
