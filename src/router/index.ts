@@ -1,9 +1,9 @@
 declare const VueRouter: any
 
-const { createRouter, createWebHistory } = VueRouter
+const { createRouter, createWebHashHistory } = VueRouter
 
 const router = createRouter({
-  history: createWebHistory('/'),
+  history: createWebHashHistory(),
   routes: [
     {
       path: '/',

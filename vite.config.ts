@@ -23,7 +23,7 @@ const CDN = {
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [vue()],
-  base: '/',
+  base: './',
   build: {
     target: 'es2015',
     minify: 'terser',
