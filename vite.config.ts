@@ -2,24 +2,6 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import path from 'path'
 
-const CDN = {
-  externals: {
-    vue: 'Vue',
-    'vue-router': 'VueRouter',
-    'element-plus': 'ElementPlus',
-    pinia: 'Pinia'
-  },
-  css: [
-    'https://unpkg.com/element-plus@2.3.12/dist/index.css'
-  ],
-  js: [
-    'https://unpkg.com/vue@3.3.4/dist/vue.global.prod.js',
-    'https://unpkg.com/vue-router@4.2.4/dist/vue-router.global.prod.js',
-    'https://unpkg.com/element-plus@2.3.12/dist/index.full.min.js',
-    'https://unpkg.com/pinia@2.1.6/dist/pinia.iife.prod.js'
-  ]
-}
-
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [vue()],
@@ -38,7 +20,6 @@ export default defineConfig({
       }
     },
     rollupOptions: {
-      external: Object.keys(CDN.externals),
       output: {
         manualChunks: (id) => {
           if (id.includes('node_modules')) {
