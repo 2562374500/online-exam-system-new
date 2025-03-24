@@ -10,13 +10,13 @@ const CDN = {
     pinia: 'Pinia'
   },
   css: [
-    'https://cdn.jsdelivr.net/npm/element-plus@2.3.12/dist/index.css'
+    'https://unpkg.com/element-plus@2.3.12/dist/index.css'
   ],
   js: [
-    'https://cdn.jsdelivr.net/npm/vue@3.3.4/dist/vue.global.prod.js',
-    'https://cdn.jsdelivr.net/npm/vue-router@4.2.4/dist/vue-router.global.prod.js',
-    'https://cdn.jsdelivr.net/npm/element-plus@2.3.12/dist/index.full.min.js',
-    'https://cdn.jsdelivr.net/npm/pinia@2.1.6/dist/pinia.iife.prod.js'
+    'https://unpkg.com/vue@3.3.4/dist/vue.global.prod.js',
+    'https://unpkg.com/vue-router@4.2.4/dist/vue-router.global.prod.js',
+    'https://unpkg.com/element-plus@2.3.12/dist/index.full.min.js',
+    'https://unpkg.com/pinia@2.1.6/dist/pinia.iife.prod.js'
   ]
 }
 
